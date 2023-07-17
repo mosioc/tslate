@@ -1,5 +1,8 @@
 function App() {
-    return <h1>Hi There!</h1>;
+
+    let mes = "simple mess";
+
+    return <h1>{new Date().toLocaleTimeString()}</h1>;
 }
 
 export default App;
