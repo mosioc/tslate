@@ -1,8 +1,9 @@
-function ProfileCard(props) {
+function ProfileCard({title, handle}) { 
+
     return (
         <div>
-            <div>this is title: {props.title}</div>
-            <div>this is handle: {props.title}</div>
+            <div>this is title: {title}</div>
+            <div>this is handle: {handle}</div>
         </div>
     );
 }
