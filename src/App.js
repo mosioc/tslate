@@ -7,9 +7,11 @@ function App() {
     return (
         <div>
             <h1>Presonal Digital Assistants</h1>
-            <ProfileCard />
-            <ProfileCard />
-            <ProfileCard />
+            <ProfileCard title="siri" handle="apple" />
+            <br />
+            <ProfileCard title="cortana" handle="microsoft" />
+            <br />
+            <ProfileCard title="google assisstant" handle="google" />
         </div>)
 }
 
