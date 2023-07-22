@@ -1,9 +1,10 @@
-function ProfileCard({title, handle}) { 
+function ProfileCard({title, handle, image}) { 
 
     return (
         <div>
-            <div>this is title: {title}</div>
-            <div>this is handle: {handle}</div>
+            <img src={image} alt="pda logo"/>
+            <div>title: {title}</div>
+            <div>handle: {handle}</div>
         </div>
     );
 }
