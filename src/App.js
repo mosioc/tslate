@@ -1,19 +1,27 @@
-import ProfileCard from "./ProfileCard";
+import AnimalShow from "./AnimalShow";
+import { useState } from "react";
+
+function getRandomAnimal() {
+    const animals = ['bird', 'cat', 'cow', 'dog', 'gator', 'horse'];
+
+    return animals[Math.floor(Math.random() * animals.length)]
+}
 
 function App() {
-    const img1 = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Christ_Pantocrator_mosaic_from_Hagia_Sophia_2744_x_2900_pixels_3.1_MB.jpg/210px-Christ_Pantocrator_mosaic_from_Hagia_Sophia_2744_x_2900_pixels_3.1_MB.jpg"
-    const img2 = "https://upload.wikimedia.org/wikipedia/commons/2/21/Evangelist_Luka_pishustchiy_ikonu.jpg"
-    const img3 = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Byzantine_-_Saint_Arethas_-_Walters_4820862.jpg/330px-Byzantine_-_Saint_Arethas_-_Walters_4820862.jpg"
+    const [animal, setAnimal] = useState([]);
+
+    const onClickHandle = () => {
+        setAnimal([...animal, getRandomAnimal()])
+    }
+
+    const renderedAnimal = animal.map((animal, index) => {
+        return <AnimalShow type={animal} key={index} />
+    })
 
     return (
-
         <div>
-            <h1>Presonal Digital Assistants</h1>
-            <ProfileCard title="siri" handle="apple" image={img1} />
-            <br />
-            <ProfileCard title="cortana" handle="microsoft" image={img2} />
-            <br />
-            <ProfileCard title="google assisstant" handle="google" image={img3} />
+            <button onClick={onClickHandle}>Add Animal</button>
+            <div>{renderedAnimal}</div>
         </div>)
 }
 
